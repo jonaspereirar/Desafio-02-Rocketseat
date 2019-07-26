@@ -1,5 +1,6 @@
 import express from 'express';
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 import routes from './routes';
 
@@ -33,4 +34,26 @@ class App {
     this.server.use(routes);
   }
 }
+=======
+
+import routes from './routes';
+
+class App {
+    constructor() {
+        this.server = express();
+
+        this.middewares();
+        this.routes();
+    }
+
+    middewares() {
+        this.server.use(express.json());
+    }
+
+    routes() {
+        this.server.use(routes);
+    }
+}
+
+>>>>>>> featrc
 export default new App().server;

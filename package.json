@@ -4,17 +4,27 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
+<<<<<<< HEAD
       "dev": "nodemon src/server.js"
+=======
+    "dev": "nodemon src/server.js"
+>>>>>>> featrc
   },
   "dependencies": {
     "express": "^4.17.1"
   },
   "devDependencies": {
-    "eslint": "^6.1.0",
-    "eslint-config-prettier": "^6.0.0",
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "@babel/preset-react": "^7.0.0",
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-config-prettier": "^4.3.0",
+    "eslint-plugin-import": "^2.17.3",
     "eslint-plugin-prettier": "^3.1.0",
     "nodemon": "^1.19.1",
-    "prettier": "^1.18.2",
+    "prettier": "^1.17.1",
+    "sequelize-cli": "^5.5.0",
     "sucrase": "^3.10.1"
   }
 }
