@@ -1,4 +1,5 @@
 import express from 'express';
+<<<<<<< HEAD
 
 import routes from './routes';
 
@@ -12,6 +13,20 @@ class App {
 
   middewares() {
     this.server.use(express.json);
+=======
+import routes from './routes';
+
+class App {
+  constructor() {
+    this.server = express();
+
+    this.middeware();
+    this.routes();
+  }
+
+  middeware() {
+    this.server.use(express.json());
+>>>>>>> server
   }
 
   routes() {
