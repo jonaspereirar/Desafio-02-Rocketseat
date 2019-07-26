@@ -1,9 +1,5 @@
 {
-<<<<<<< HEAD
-    "execMap":{
-=======
     "execMap": {
->>>>>>> featrc
         "js": "sucrase-node"
     }
 }
