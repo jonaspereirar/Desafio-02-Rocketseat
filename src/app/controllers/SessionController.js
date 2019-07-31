@@ -1,21 +1,31 @@
 import jwt from 'jsonwebtoken';
+import * as Yup from 'yup';
 
 import User from '../models/User';
 import authConfig from '../../config/auth';
 
 class SessionController {
     async store(req, res) {
+        const schema = Yup.object().shape({
+            email: Yup.string()
+                .email()
+                .required(),
+            password: Yup.string().required(),
+        });
+
+        if (!(await schema.isValid(req.body))) {
+            return res.status(400).json({ error: 'Validation fails' });
+        }
+
         const { email, password } = req.body;
 
         const user = await User.findOne({ where: { email } });
-        // procura usuário existente
+
         if (!user) {
-            // retorna erro de usuário inexistente
             return res.status(401).json({ error: 'User not found' });
         }
 
         if (!(await user.checkPassword(password))) {
-            // retonar erro se passord incorreta
             return res.status(401).json({ error: 'Password does not match' });
         }
 
@@ -27,9 +37,8 @@ class SessionController {
                 name,
                 email,
             },
-            // hash gerado em md5oline.org
-            token: jwt.sign({ id }, authConfig, {
-                expiresIn: authConfig.expiresIn, // expriração do token
+            token: jwt.sign({ id }, authConfig.secret, {
+                expiresIn: authConfig.expiresIn,
             }),
         });
     }
