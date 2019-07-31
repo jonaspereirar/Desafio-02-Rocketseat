@@ -1,15 +1,15 @@
 Meetapp
 Learning in rocketseat-module 1 - macth 2 https://github.com/Rocketseat/bootcamp-gostack-desafio-02
 
-Aplicação
+.Aplicação
 A aplicação que iremos dar início ao desenvolvimento a partir de agora é um app agregador de eventos para desenvolvedores chamado Meetapp (um acrônimo à Meetup + App).
 
 Nesse primeiro desafio vamos criar algumas funcionalidades básicas que aprendemos ao longo das aulas até aqui.
 
-Funcionalidades
+.Funcionalidades
 Abaixo estão descritas as funcionalidades que você deve adicionar em sua aplicação.
 
-Autenticação
+.Autenticação
 Permita que um usuário se autentique em sua aplicação utilizando e-mail e senha.
 
 A autenticação deve ser feita utilizando JWT.
